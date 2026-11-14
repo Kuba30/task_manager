@@ -14,14 +14,14 @@ class TagSerializer(serializers.ModelSerializer):
         fields = ["id", "name"]
 
 
-# Краткий — для списка
+
 class TaskListSerializer(serializers.ModelSerializer):
     class Meta:
         model = Task
         fields = ["id", "title", "is_completed", "created_at"]
 
 
-# Детальный — для просмотра + создания/обновления
+
 class TaskDetailSerializer(serializers.ModelSerializer):
     category = CategorySerializer(read_only=True)
     tags = TagSerializer(many=True, read_only=True)

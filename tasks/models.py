@@ -1,10 +1,7 @@
 from django.db import models
 
-from django.db import models
-
 
 class Category(models.Model):
-    """Категория задач (одна категория -> много задач)."""
 
     name = models.CharField("Название", max_length=100, unique=True)
 
@@ -18,7 +15,6 @@ class Category(models.Model):
 
 
 class Tag(models.Model):
-    """Метка (одна задача <-> много меток, одна метка <-> много задач)."""
 
     name = models.CharField("Название", max_length=50, unique=True)
 
